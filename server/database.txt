@@ -1,0 +1,42 @@
+CREATE TABLE Users
+(
+  user_id INT NOT NULL AUTO_INCREMENT,
+  password varchar(40) NOT NULL,
+  dateCreated INT NOT NULL,
+  username varchar(40) NOT NULL,
+  email varchar(40) NOT NULL,
+  PRIMARY KEY (user_id)
+);
+
+CREATE TABLE Books
+(
+  book_id INT NOT NULL AUTO_INCREMENT,
+  cover INT,
+  publisher varchar(40),
+  title varchar(40) NOT NULL,
+  author varchar(40) NOT NULL,
+  category varchar(40),
+  datePublished INT,
+  PRIMARY KEY (book_id)
+);
+
+CREATE TABLE Reviews
+(
+  review_id INT NOT NULL AUTO_INCREMENT,
+  reviewStars INT NOT NULL,
+  dateCreated INT NOT NULL,
+  body varchar(40) NOT NULL,
+  user_id INT NOT NULL,
+  book_id INT NOT NULL,
+  PRIMARY KEY (review_id),
+  FOREIGN KEY (user_id) REFERENCES Users(user_id),
+  FOREIGN KEY (book_id) REFERENCES Books(book_id)
+);
+
+CREATE TABLE Comments
+(
+  user_id INT NOT NULL,
+  review_id INT NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES Users(user_id),
+  FOREIGN KEY (review_id) REFERENCES Reviews(review_id)
+);
