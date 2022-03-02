@@ -3,15 +3,37 @@ const mysql = require('mysql');
 const app = express();
 const cors = require('cors');
 
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: ["http://localhost:3000"],
+    methods: ["GET", "POST"],
+    credentials: true
+}));
+app.use(cookieParser());
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(session({
+    key: "userId",
+    secret: "test",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        expires: 60 * 60 * 24,
+    },
+}))
 
 //Tarkasta salasana ja database
 const db = mysql.createConnection({
     user: "root",
     host: "localhost",
-    password: "",
+    password: "password",
     database: "web2"
 });
 
@@ -21,28 +43,58 @@ app.post('/register', (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
     const email = req.body.email;
+    const date = new Date();
+    const userCreated = date.toString();
 
-    db.query("INSERT INTO Users (username, password, email, dateCreated) VALUES (?,?,?,1)", [username, password, email], (err, result) => {
+    bcrypt.hash(password, saltRounds, (err, hash) => {
         if (err) {
             console.log(err)
         }
+
+        db.query("INSERT INTO Users (username, password, email, dateCreated) VALUES (?,?,?,?)",
+            [username, hash, email, userCreated], (err, result) => {
+                if (err) {
+                    console.log(err)
+                }
+            })
     })
 });
+
+app.get('/login', (req, res) => {
+    if (req.session.user) {
+        res.send({
+            loggedIn: true,
+            user: req.session.user
+        })
+    } else {
+        res.send({loggedIn: false})
+    }
+})
 
 //Kirjautuminen
 app.post('/login', (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
 
-    db.query("SELECT * FROM Users WHERE username = ? AND password = ?", [username, password], (err, result) => {
+    db.query("SELECT * FROM Users WHERE username = ?;",
+        username,
+        (err, result) => {
         if (err) {
             console.log(err)
-            res.send({error: err})
+            res.send({err: err})
         }
         if (result.length > 0) {
-            res.send(result)
+            bcrypt.compare(password, result[0].password, (error, response) => {
+                if (response) {
+                    req.session.user = result
+                    console.log(req.session.user)
+                    res.send(result)
+                } else {
+                    res.send({message: "wrong username or password"})
+                }
+            })
         } else {
-            res.send({message: "wrong username or password"})
+            res.send({message: "User does not exist"})
         }
     })
 })

@@ -56,7 +56,7 @@ const ReviewPage = () => {
             <button onClick={submitReview}>Submit Review</button>
 
             <h1>Reviews</h1>
-            <button onClick={getReviews}>Testi</button>
+            <button onClick={getReviews}>Hae arvostelut (testi)</button>
             <p>{reviews}</p>
             <button onClick={deleteReview}>Poisto testi</button>
         </div>
