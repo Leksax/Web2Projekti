@@ -15,6 +15,7 @@ const db = mysql.createConnection({
     database: "web2"
 });
 
+//Käyttäjän rekisteröinti
 app.post('/register', (req, res) => {
 
     const username = req.body.username;
@@ -28,6 +29,7 @@ app.post('/register', (req, res) => {
     })
 });
 
+//Kirjautuminen
 app.post('/login', (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
@@ -41,6 +43,46 @@ app.post('/login', (req, res) => {
             res.send(result)
         } else {
             res.send({message: "wrong username or password"})
+        }
+    })
+})
+
+//Kirjoita arvostelu
+app.post('/writeReview', (req, res) => {
+    const date = new Date();
+    const postCreated = date.toString();
+    const stars = req.body.stars;
+    const content = req.body.body;
+
+    //user ja book id ovat 1 testimielessä
+    db.query("INSERT INTO Reviews(reviewStars, dateCreated, body, user_id, book_id) VALUES (?,?,?,1,1)",
+        [stars, postCreated, content], (err, res) => {
+            if (err) {
+                console.log(err)
+            }
+        })
+})
+
+//Hae arvostelut
+app.get('/getReview', (req, res) => {
+    db.query("SELECT * FROM Reviews", (err, result) => {
+        if (err) {
+            console.log(err)
+        }
+        res.send(result)
+    })
+})
+
+//Poista arvostelu (id haku ei vielä tehty)
+app.post("/deleteReview", (req, res) => {
+    const id = 9;
+
+    db.query("DELETE FROM Reviews WHERE review_id = ?", [id], (err, res) => {
+        if (err) {
+            console.log(err)
+        }
+        if (res) {
+            console.log(res)
         }
     })
 })

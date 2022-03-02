@@ -1,0 +1,47 @@
+.navigationBar{
+    background-color: lightgray;
+    height: 47px;
+    align-items: center;
+}
+.SearchBar {
+    float: left;
+    padding-top: 2px;
+    padding-left: 10px;
+}
+
+.SearchBar input{
+    width: 250px;
+    height: 35px;
+    font-size: 20px;
+    padding-left: 5px;
+    margin-right: 200px;
+    align-items: center;
+}
+.userdropdown{
+    height: 0.8rem;
+}
+.userdropdown-menu{
+    width: 10rem;
+    text-align: center;
+    color: black;
+    background-color: lightgray;
+    position: relative;
+    cursor:pointer;
+    float: right;
+    padding-top: 10px;
+}
+.userdropdown-menu:hover{
+    color:black;
+    background-color: lightgray;
+}
+.userdropdown-list{
+    list-style-type: none;
+    text-align: center;
+    padding-right: 30px;
+}
+
+.Home{
+ float: left;
+    padding-top: 10px;
+    padding-left: 10px;
+}
