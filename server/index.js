@@ -25,7 +25,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
     cookie: {
-        expires: 60 * 60 * 24,
+        expires: 60 * 60 * 24
     },
 }))
 
@@ -97,6 +97,11 @@ app.post('/login', (req, res) => {
             res.send({message: "User does not exist"})
         }
     })
+})
+
+app.get('/logout', (req, res) => {
+    req.session.destroy()
+    res.send("User logged out")
 })
 
 //Kirjoita arvostelu

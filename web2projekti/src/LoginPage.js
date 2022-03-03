@@ -36,10 +36,16 @@ const LoginPage = () => {
         });
     }
 
+    const logout = () => {
+        Axios.get('http://localhost:3001/logout').then((response) => {
+            setLoginStatus("Logged out")
+        })
+    }
+
     useEffect(() => {
         Axios.get("http://localhost:3001/login").then((response) => {
-            if (response.data.loggedIn == true) {
-                setLoginStatus(response.data.user[0].username)
+            if (response.data.loggedIn === true) {
+                setLoginStatus("Logged in as: " + response.data.user[0].username)
             }
         })
 
@@ -89,6 +95,7 @@ const LoginPage = () => {
             </div>
 
             <h1>{loginStatus}</h1>
+            <button onClick={logout}>Logout</button>
 
         </div>
     )
