@@ -1,49 +1,54 @@
-import React, {useEffect, useState} from "react";
-import { Table } from 'react-bootstrap'
-import axios from "axios";
-import Row from "./Row";
-
+import {useEffect, useState} from "react";
+import harrypotter from './harrypotter.jpg'
+import './List.css'
 
 const List = () => {
-
-    const [contents, setEvents] = useState([0])
+    const [error, setError] = useState(null);
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [items, setItems] = useState([]);
 
     useEffect(() => {
-        console.log('effect')
-        axios
-            .get('http://localhost:3001/events')
-            .then(response => {
-                console.log('promise fulfilled')
-                setEvents(response.data)
-            })
-    }, [])
-    //console.log('render', notes.length, 'notes')
+        fetch("http://localhost:3001/getReview")
+            .then((res) => res.json())
+            .then(
+                (result) => {
+                    setIsLoaded(true);
+                    setItems(result);
+                },
 
-    return(
-        <div className="container">
-            {/* A JSX comment */}
+                (error) => {
+                    setIsLoaded(true);
+                    setError(error);
+                }
+            );
+    }, []);
 
-            {/* <div>
-                <p>Valinta 2.</p>
+    if (error) {
+        return <>{error.message}</>;
+    } else if (!isLoaded) {
+        return <>Lataa</>;
+    } else {
+        return (
+            <div className="wrapper">
+                <ul className="book-grid">
+                    {items.map((Row) => (
+                        <li>
+                            <article className="book" key={Row.dateCreated}>
+                                <div className="book-image">
+                                    <img className="photo" src={harrypotter} alt={"asd"} />
+                                </div>
+                                <div className="book-content">
+                                    <h2 className="book-name">{Row.book_id}</h2>
+                                    <ol className="book-list">
+                                    </ol>
+                                </div>
+                            </article>
+                        </li>
+                    ))}
+                </ul>
             </div>
-            */}
-            <Table striped>
-            <tbody>
-            {contents.map(content => (
-
-                <tr key={content.id}>
-                    {
-                        //mita
-                    }
-                    <Row name ={content.name} date ={content.date} location={content.place}>
-                    </Row>
-                </tr>
-            ))}
-            </tbody>
-            </Table>
-
-        </div>
-    )
+        );
+    }
 }
 
 export default List
