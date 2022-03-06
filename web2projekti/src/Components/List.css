@@ -3,7 +3,7 @@
     padding: 0;
 }
 img {
-    width: 100%;
+    width: 50%;
 }
 :root {
     --bg: #fafafa;
@@ -56,12 +56,12 @@ h1, h2 {
 }
 .book-image img {
     min-height: 100%;
-    width: 100%;
+
     object-fit: cover;
     object-position: center;
 }
 .book-content {
-    padding: 32px 15px;
+
 }
 .book-content h2 {
     display: -webkit-box;
