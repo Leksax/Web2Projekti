@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import Axios from "axios";
 import harrypotter from './harrypotter.jpg'
 import './List.css'
 
@@ -23,6 +24,19 @@ const List = () => {
             );
     }, []);
 
+    /*
+    useEffect(() => {
+        Axios.get('https://www.googleapis.com/books/v1/volumes?q=react&key=AIzaSyCZ9sOe77Idn9JDEhbyBP0-6WLXlUUb_ho')
+            .then(res => {
+                console.log(res.data.items)
+                setItems(res.data.items)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    })
+    */
+
     if (error) {
         return <>{error.message}</>;
     } else if (!isLoaded) {
@@ -38,7 +52,7 @@ const List = () => {
                                     <img className="photo" src={harrypotter} alt={"asd"} />
                                 </div>
                                 <div className="book-content">
-                                    <h2 className="book-name">{Row.book_id}</h2>
+                                    <h2 className="book-name">{Row.body}</h2>
                                     <ol className="book-list">
                                     </ol>
                                 </div>

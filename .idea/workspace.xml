@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b00afa0-0b66-4521-a0a4-6ee66d834b25" name="Default Changelist" comment="" />
+    <list default="true" id="7b00afa0-0b66-4521-a0a4-6ee66d834b25" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web2projekti/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web2projekti/src/Components/List.js" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/Components/List.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web2projekti/src/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/LoginPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web2projekti/src/ReviewPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/ReviewPage.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +23,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
@@ -31,6 +38,7 @@
       <option name="presentableId" value="Default" />
       <updated>1645791049073</updated>
       <workItem from="1645791050139" duration="467000" />
+      <workItem from="1646565362453" duration="2187000" />
     </task>
     <servers />
   </component>
@@ -59,11 +67,6 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="528" y="423" width="998" height="708" key="SettingsEditor" timestamp="1645791214975">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state x="528" y="423" width="998" height="708" key="SettingsEditor/0.0.2560.1440/-1920.357.1920.1080@0.0.2560.1440" timestamp="1645791214975" />
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

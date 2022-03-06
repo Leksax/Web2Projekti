@@ -11,12 +11,12 @@ const ReviewPage = () => {
         Axios.get('http://localhost:3001/getReview').then((response) => {
             console.log(response)
             setReviews(
-                "USER: " + response.data[0].user_id + " " +
-                "Review ID: " + response.data[0].review_id + " " +
-                "BOOK: " + response.data[0].book_id + " " +
-                "DATE: " + response.data[0].dateCreated + " " +
-                "STARS: " + response.data[0].reviewStars + " " +
-                "Review: " + response.data[0].body
+                "USER: " + response.data[1].user_id + " " +
+                "Review ID: " + response.data[1].review_id + " " +
+                "BOOK: " + response.data[1].book_id + " " +
+                "DATE: " + response.data[1].dateCreated + " " +
+                "STARS: " + response.data[1].reviewStars + " " +
+                "Review: " + response.data[1].body
                 )
         })
     }
@@ -36,6 +36,12 @@ const ReviewPage = () => {
             console.log(response)
         });
     }
+/*
+    useEffect(() => {
+        Axios.get('http://localhost:3001/getReview').then(response => {
+            setContent(response.data[0])
+        })
+    })*/
 
     return (
         <div>
@@ -59,6 +65,7 @@ const ReviewPage = () => {
             <button onClick={getReviews}>Hae arvostelut (testi)</button>
             <p>{reviews}</p>
             <button onClick={deleteReview}>Poisto testi</button>
+
         </div>
     )
 }
