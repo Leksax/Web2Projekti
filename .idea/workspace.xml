@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7b00afa0-0b66-4521-a0a4-6ee66d834b25" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web2projekti/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web2projekti/src/Components/List.js" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/Components/List.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web2projekti/src/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/LoginPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web2projekti/src/Components/BookDetailsModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/Components/BookDetailsModal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web2projekti/src/ReviewPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/ReviewPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,8 +38,16 @@
       <option name="presentableId" value="Default" />
       <updated>1645791049073</updated>
       <workItem from="1645791050139" duration="467000" />
-      <workItem from="1646565362453" duration="2187000" />
+      <workItem from="1646565362453" duration="2659000" />
+      <workItem from="1646657077107" duration="6862000" />
     </task>
+    <task id="LOCAL−00001" summary="API haku lisätty List.js luokkaan">
+      <created>1646567649606</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1646567649606</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -68,5 +76,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="API haku lisätty List.js luokkaan" />
+    <option name="LAST_COMMIT_MESSAGE" value="API haku lisätty List.js luokkaan" />
   </component>
 </project>

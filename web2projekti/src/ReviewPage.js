@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import Axios from "axios";
 
-const ReviewPage = () => {
+const ReviewPage = ({bookId}) => {
     const [reviewBody, setReviewBody] = useState("")
     const [stars, setStars] = useState("")
     const [reviews, setReviews] = useState("")
@@ -29,9 +29,11 @@ const ReviewPage = () => {
     }
 
     const submitReview = () => {
+        console.log(bookId + " ReviewPage")
         Axios.post('http://localhost:3001/writeReview', {
             body: reviewBody,
-            stars: stars
+            stars: stars,
+            bookId: bookId
         }).then((response) => {
             console.log(response)
         });

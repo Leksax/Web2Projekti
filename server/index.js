@@ -34,7 +34,7 @@ const db = mysql.createConnection({
     user: "root",
     host: "localhost",
     password: "password",
-    database: "web2"
+    database: "BookApp"
 });
 
 //Käyttäjän rekisteröinti
@@ -110,10 +110,11 @@ app.post('/writeReview', (req, res) => {
     const postCreated = date.toString();
     const stars = req.body.stars;
     const content = req.body.body;
+    const bookId = req.body.bookId;
 
     //user ja book id ovat 1 testimielessä
-    db.query("INSERT INTO Reviews(reviewStars, dateCreated, body, user_id, book_id) VALUES (?,?,?,1,1)",
-        [stars, postCreated, content], (err, res) => {
+    db.query("INSERT INTO Reviews(reviewStars, reviewDateCreated, reviewBody, user_id, book_id) VALUES (?,?,?,1,?)",
+        [stars, postCreated, content, bookId], (err, res) => {
             if (err) {
                 console.log(err)
             }
