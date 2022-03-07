@@ -17,8 +17,10 @@ const List = () => {
     const [pageCount, setPageCount] = useState(0);
     const [itemOffset, setItemOffset] = useState(0);
 
+
+
     useEffect(() => {
-        Axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyDZmyv8cNTFgTAbwc2D6q_-MB4vlLAF4Jw&maxResults=40&printType=books')
+        Axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyDZmyv8cNTFgTAbwc2D6q_-MB4vlLAF4Jw&printType=books')
             .then(res => {
 
                 setIsLoaded(true);
@@ -30,7 +32,6 @@ const List = () => {
                 setIsLoaded(true);
                 console.log(err)
             })
-
         const endOffset = itemOffset + itemsPerPage;
         console.log(`Loading items from ${itemOffset} to ${endOffset}`);
         setCurrentItems(items.slice(itemOffset, endOffset));
