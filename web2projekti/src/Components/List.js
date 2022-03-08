@@ -4,14 +4,14 @@ import './List.css'
 import BookDetailsModal from "./BookDetailsModal";
 
 const List = () => {
-    const key = "AIzaSyDZmyv8cNTFgTAbwc2D6q_-MB4vlLAF4Jw";
+    const key = "kopioi";
 
     const [search, setSearch] = useState("")
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
     const [bookItem, setItem] = useState(false);
-    const [show, setShow] = useState(false);
+    const [modalShown, toggleModal] = useState(false);
 
     useEffect(() => {
 
@@ -57,7 +57,7 @@ const List = () => {
                     {items.map((row) => (
                         <li>
                             <article  key={row}>
-                                <div onClick={() => {setShow(true);setItem(row)}}  className="book-image">
+                                <div onClick={() => {toggleModal(!modalShown);setItem(row)}}  className="book-image">
                                     <img className="photo" src={row.volumeInfo.imageLinks && row.volumeInfo.imageLinks.smallThumbnail} alt={"asd"} />
                                 </div>
                                 <div className="book-content">
@@ -67,7 +67,7 @@ const List = () => {
                         </li>
                     ))}
                 </ul>
-                <BookDetailsModal show={show} bookItem={bookItem} onClose={()=>setShow(false)}/>
+                <BookDetailsModal shown={modalShown} bookItem={bookItem} close={() => {toggleModal(false)}}/>
             </div>
 
 

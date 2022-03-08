@@ -20,7 +20,7 @@ const List = () => {
 
 
     useEffect(() => {
-        Axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyDZmyv8cNTFgTAbwc2D6q_-MB4vlLAF4Jw&printType=books')
+        Axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=&printType=books')
             .then(res => {
 
                 setIsLoaded(true);
