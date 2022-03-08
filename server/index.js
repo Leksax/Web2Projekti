@@ -51,7 +51,7 @@ app.post('/register', (req, res) => {
             console.log(err)
         }
 
-        db.query("INSERT INTO Users (username, password, email, dateCreated) VALUES (?,?,?,?)",
+        db.query("INSERT INTO Users (username, password, email, userDateCreated) VALUES (?,?,?,?)",
             [username, hash, email, userCreated], (err, result) => {
                 if (err) {
                     console.log(err)
@@ -112,7 +112,7 @@ app.post('/writeReview', (req, res) => {
     const content = req.body.body;
     const bookId = req.body.bookId;
 
-    //user ja book id ovat 1 testimielessä
+    //user id on 1 testimielessä
     db.query("INSERT INTO Reviews(reviewStars, reviewDateCreated, reviewBody, user_id, book_id) VALUES (?,?,?,1,?)",
         [stars, postCreated, content, bookId], (err, res) => {
             if (err) {
@@ -121,6 +121,7 @@ app.post('/writeReview', (req, res) => {
         })
 })
 
+/*
 //Hae arvostelut
 app.get('/getReview', (req, res) => {
     db.query("SELECT * FROM Reviews", (err, result) => {
@@ -129,6 +130,18 @@ app.get('/getReview', (req, res) => {
         }
         res.send(result)
     })
+})
+*/
+
+//Hae tietyn kirjan arvostelut
+app.post('/getReview', (req, res) => {
+    const book_id = req.body.bookId;
+
+    db.query("SELECT * FROM Reviews WHERE book_id = ?", [book_id], (err, result) => {
+        console.log(result)
+        res.send(result)
+    })
+
 })
 
 //Poista arvostelu (id haku ei vielä tehty)
@@ -144,33 +157,6 @@ app.post("/deleteReview", (req, res) => {
         }
     })
 })
-
-/*
-//testi
-app.post('/insert', (req,res) => {
-    const title = "Joku kirja";
-    const author = "Joku kirjoittaja";
-
-    db.query('INSERT INTO Books (title, author) VALUES (?, ?)', [title, author], (err, result) => {
-        if (err) {
-            console.log(err)
-        }
-
-        res.send(result)
-        console.log("Data inserted successfully")
-    })
-})
-//testi
-app.get("/select", (req, res) => {
-    db.query("SELECT * FROM books", (err, result) => {
-        if (err) {
-            console.log(err)
-        }
-
-        res.send(result)
-    })
-})
-*/
 
 app.listen(3001, () => {
     console.log("Server running")
