@@ -2,11 +2,15 @@ import React, {useEffect, useState} from 'react'
 import './LatestReviews.css'
 import $ from 'jquery';
 import Axios from "axios";
+import BookDetailsModal from "./BookDetailsModal";
 
 const LatestReviews = () => {
-    const key ="kopiioiw"
+    const [counter, setCounter] = useState(-1);
+    const key ="kopoioi"
     const [theArray, setTheArray] = useState([])
     const [reviews, setReviews] = useState([])
+    const [bookItem, setItem] = useState(false);
+    const [modalShown, toggleModal] = useState(false);
 
 
     const fetchData = () => {
@@ -26,27 +30,28 @@ const LatestReviews = () => {
 
 
     useEffect(() => {
+        setCounter(counter + 1)
         if(reviews.length == 0)  {
             return
-        } else  {
-            console.log(reviews);
-            console.log(reviews.length);
-            getBookPhotos();
-        }
+        } else if (counter < reviews.length) {
 
-    }, [reviews]);
+            getBookPhotos();
+
+        }
+        return
+
+    }, [reviews, theArray]);
 
 
 
 
     const getBookPhotos = () => {
-        console.log(reviews)
-        console.log(reviews)
 
-        Axios.get('https://www.googleapis.com/books/v1/volumes?q='+reviews[0].book_id+'&key='+key)
+
+        Axios.get('https://www.googleapis.com/books/v1/volumes?q='+reviews[counter].book_id+'&key='+key)
             .then(res => {
                 console.log(res.data.items)
-                setTheArray(oldArray => [...oldArray, res.data.items[0].volumeInfo.imageLinks.smallThumbnail])
+                setTheArray(oldArray => [...oldArray, res.data.items[0]])
                 console.log(theArray)
             })
             .catch(err => {
@@ -67,11 +72,11 @@ const LatestReviews = () => {
                 <a className="prev" onClick={(e) => scroll(null, -1)}>&#10094;</a>
                 <div className="image-container">
                     {theArray.map((row) => (
-                        <img className="photo" src={row} alt={"asd"} />
+                        <img onClick={() => {toggleModal(!modalShown);setItem(row)}} className="photo" src={row.volumeInfo.imageLinks.smallThumbnail} alt={"asd"} />
                     ))}
                 </div>
                 <a className="next" onClick={(e) => scroll(null, 1)}>&#10095;</a>
-
+                <BookDetailsModal shown={modalShown} bookItem={bookItem} close={() => {toggleModal(false)}}/>
             </div>
     )
 }
