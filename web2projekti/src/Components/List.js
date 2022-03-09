@@ -2,9 +2,13 @@ import {useEffect, useState} from "react";
 import Axios from "axios";
 import './List.css'
 import BookDetailsModal from "./BookDetailsModal";
+import StarRating from "./StarRating";
+import { Card } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
+
 
 const List = () => {
-    const key ="asdasd"
+    const key ="kopioi"
 
     const [search, setSearch] = useState("")
     const [error, setError] = useState(null);
@@ -37,6 +41,7 @@ const List = () => {
         return <>Lataa</>;
     } else  {
         return (
+            //{row.volumeInfo.imageLinks && row.volumeInfo.imageLinks.smallThumbnail}
 
             <div className="wrapper">
                 <div className="search-wrapper">
@@ -56,14 +61,13 @@ const List = () => {
                 <ul className="book-grid">
                     {items.map((row) => (
                         <li>
-                            <article  key={row}>
-                                <div onClick={() => {toggleModal(!modalShown);setItem(row)}}  className="book-image">
-                                    <img className="photo" src={row.volumeInfo.imageLinks && row.volumeInfo.imageLinks.smallThumbnail} alt={"asd"} />
-                                </div>
-                                <div className="book-content">
-                                    <h2 className="book-name">{row.volumeInfo.title} </h2>
-                                </div>
-                            </article>
+                            <Card onClick={() => {toggleModal(!modalShown);setItem(row)}} style={{ width: '18rem' }}>
+                                <Card.Img variant="top" src={row.volumeInfo.imageLinks && row.volumeInfo.imageLinks.smallThumbnail} />
+                                <Card.Body >
+                                    <Card.Title>{row.volumeInfo.title}</Card.Title>
+                                    <StarRating bookId={row.id}  />;
+                                </Card.Body>
+                            </Card>
                         </li>
                     ))}
                 </ul>
