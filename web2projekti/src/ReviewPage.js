@@ -29,6 +29,7 @@ const ReviewPage = ({bookId}) => {
             stars: stars,
             bookId: bookId
         }).then((response) => {
+            console.log("testi")
             console.log(response)
         });
     }
