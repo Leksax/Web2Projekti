@@ -6,7 +6,7 @@ import BookDetailsModal from "./BookDetailsModal";
 
 const LatestReviews = () => {
     const [counter, setCounter] = useState(-1);
-    const key ="AIzaSyDZmyv8cNTFgTAbwc2D6q_-MB4vlLAF4Jw"
+    const key ="asdasd"
     const [theArray, setTheArray] = useState([])
     const [reviews, setReviews] = useState([])
     const [bookItem, setItem] = useState(false);
