@@ -4,7 +4,7 @@ import './List.css'
 import BookDetailsModal from "./BookDetailsModal";
 
 const List = () => {
-    const key ="kopioi"
+    const key ="AIzaSyDZmyv8cNTFgTAbwc2D6q_-MB4vlLAF4Jw"
 
     const [search, setSearch] = useState("")
     const [error, setError] = useState(null);

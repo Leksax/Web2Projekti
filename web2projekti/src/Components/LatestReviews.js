@@ -6,7 +6,7 @@ import BookDetailsModal from "./BookDetailsModal";
 
 const LatestReviews = () => {
     const [counter, setCounter] = useState(-1);
-    const key ="kopoioi"
+    const key ="AIzaSyDZmyv8cNTFgTAbwc2D6q_-MB4vlLAF4Jw"
     const [theArray, setTheArray] = useState([])
     const [reviews, setReviews] = useState([])
     const [bookItem, setItem] = useState(false);
@@ -44,7 +44,6 @@ const LatestReviews = () => {
 
 
 
-
     const getBookPhotos = () => {
 
 
@@ -72,7 +71,7 @@ const LatestReviews = () => {
                 <a className="prev" onClick={(e) => scroll(null, -1)}>&#10094;</a>
                 <div className="image-container">
                     {theArray.map((row) => (
-                        <img onClick={() => {toggleModal(!modalShown);setItem(row)}} className="photo" src={row.volumeInfo.imageLinks.smallThumbnail} alt={"asd"} />
+                        <img className="image" onClick={() => {toggleModal(!modalShown);setItem(row)}} className="photo" src={row.volumeInfo.imageLinks.smallThumbnail} alt={"asd"} />
                     ))}
                 </div>
                 <a className="next" onClick={(e) => scroll(null, 1)}>&#10095;</a>

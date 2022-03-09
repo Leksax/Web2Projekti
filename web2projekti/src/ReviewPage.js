@@ -1,17 +1,27 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Axios from "axios";
 
 const ReviewPage = ({bookId}) => {
     const [reviewBody, setReviewBody] = useState("")
     const [stars, setStars] = useState("")
     const [reviews, setReviews] = useState("")
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [error, setError] = useState(null);
+    useEffect(() => {
+        getReview()
+    }, [])
 
     const getReview = () => {
         Axios.post('http://localhost:3001/getReview', {
             bookId: bookId
-        }).then((response) => {
-                console.log(response)
-                setReviews(response.data[1].reviewBody)
+        })
+        .then(data => {
+            setReviews(data.data)
+            setIsLoaded(true);
+        })
+        .catch(err => {
+            setIsLoaded(true);
+            console.log(err)
         })
     }
 
@@ -29,7 +39,6 @@ const ReviewPage = ({bookId}) => {
             stars: stars,
             bookId: bookId
         }).then((response) => {
-            console.log("testi")
             console.log(response)
         });
     }
@@ -40,31 +49,46 @@ const ReviewPage = ({bookId}) => {
         })
     })*/
 
-    return (
-        <div>
-            <h1>Enter review</h1>
-            <input
-                type="text"
-                onChange={(e) => {
-                    setReviewBody(e.target.value);
-                }}
-            />
-            <label>Stars</label>
-            <input
-                type="number"
-                onChange={(e) => {
-                    setStars(e.target.value);
-                }}
-            />
-            <button onClick={submitReview}>Submit Review</button>
+    if (error) {
+        return <>{error.message}</>;
+    } else if (!isLoaded) {
+        return <>Lataa</>;
+    } else {
+        return (
+            <div>
+                <h1>Enter review</h1>
+                <input
+                    type="text"
+                    onChange={(e) => {
+                        setReviewBody(e.target.value);
+                    }}
+                />
+                <label>Stars</label>
+                <input
+                    type="number"
+                    onChange={(e) => {
+                        setStars(e.target.value);
+                    }}
+                />
+                <button onClick={submitReview}>Submit Review</button>
 
-            <h1>Reviews</h1>
-            <button onClick={getReview}>Hae arvostelut (testi)</button>
-            <p>{reviews}</p>
-            <button onClick={deleteReview}>Poisto testi</button>
+                <h1>Reviews</h1>
 
-        </div>
-    )
+                <ul className="reviewlist">
+                    {reviews.map((row) => (
+                        <li>
+                            <article key={row}>
+                                <p className="test" alt={"asd"}>{row.review_id}</p>
+                            </article>
+                        </li>
+                    ))}
+                </ul>
+
+                <button onClick={deleteReview}>Poisto testi</button>
+
+            </div>
+        )
+    }
 }
 
-export default ReviewPage;
+export default ReviewPage
