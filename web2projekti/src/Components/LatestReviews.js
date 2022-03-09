@@ -3,10 +3,12 @@ import './LatestReviews.css'
 import $ from 'jquery';
 import Axios from "axios";
 import BookDetailsModal from "./BookDetailsModal";
+import {Card} from "react-bootstrap";
+import StarRating from "./StarRating";
 
 const LatestReviews = () => {
     const [counter, setCounter] = useState(-1);
-    const key ="kopioi"
+    const key ="asdasdafsdsa"
     const [theArray, setTheArray] = useState([])
     const [reviews, setReviews] = useState([])
     const [bookItem, setItem] = useState(false);
@@ -70,8 +72,14 @@ const LatestReviews = () => {
             <div className="wrapper">
                 <a className="prev" onClick={(e) => scroll(null, -1)}>&#10094;</a>
                 <div className="image-container">
-                    {theArray.map((row) => (
-                        <img className="image" onClick={() => {toggleModal(!modalShown);setItem(row)}} className="photo" src={row.volumeInfo.imageLinks.smallThumbnail} alt={"asd"} />
+                    {[...theArray].reverse().map((row) => (
+                        <Card className="image" onClick={() => {toggleModal(!modalShown);setItem(row)}} style={{ width: '18rem' }}>
+                            <Card.Img  variant="top" src={row.volumeInfo.imageLinks && row.volumeInfo.imageLinks.smallThumbnail} />
+                            <Card.Body >
+                                <Card.Title>{row.volumeInfo.title}</Card.Title>
+                                <StarRating className="stars" bookId={row.id}  />
+                            </Card.Body>
+                        </Card>
 
                         ))}
                 </div>

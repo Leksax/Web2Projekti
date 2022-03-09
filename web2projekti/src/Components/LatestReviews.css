@@ -14,15 +14,17 @@
     margin: 10px;
     display: inline-block;
     line-height: 100px;
+
 }
 
 .image-container {
     vertical-align: middle;
     display: inline-block;
-    width: 50%;
+    width: 75%;
     white-space: nowrap;
-    overflow-x: auto;
+    overflow-x: hidden;
     overflow-y: hidden;
+    flex-direction: row-reverse;
 }
 
 .prev, .next {
@@ -49,4 +51,9 @@
 .image-container {
     cursor: pointer;
 
+}
+
+.stars  {
+    cursor: pointer;
+    margin-bottom: 20px;
 }
