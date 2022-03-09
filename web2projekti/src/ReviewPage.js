@@ -42,12 +42,6 @@ const ReviewPage = ({bookId}) => {
             console.log(response)
         });
     }
-/*
-    useEffect(() => {
-        Axios.get('http://localhost:3001/getReview').then(response => {
-            setContent(response.data[0])
-        })
-    })*/
 
     if (error) {
         return <>{error.message}</>;
@@ -74,18 +68,18 @@ const ReviewPage = ({bookId}) => {
 
                 <h1>Reviews</h1>
 
-                <ul className="reviewlist">
+                <ul className="list-group">
                     {reviews.map((row) => (
-                        <li>
+                        <li className="list-group-item list-group-item-action">
                             <article key={row}>
-                                <p className="test" alt={"asd"}>{row.review_id}</p>
+                                <h2>User: {row.user_id}</h2>
+                                <h1 className="mb-1">{row.reviewBody}</h1>
+                                <h5>Stars: {row.reviewStars}</h5>
+                                <small className="text-muted">{row.reviewDateCreated}</small>
                             </article>
                         </li>
                     ))}
                 </ul>
-
-                <button onClick={deleteReview}>Poisto testi</button>
-
             </div>
         )
     }

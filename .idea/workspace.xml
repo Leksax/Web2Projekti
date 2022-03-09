@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b00afa0-0b66-4521-a0a4-6ee66d834b25" name="Default Changelist" comment="">
+    <list default="true" id="7b00afa0-0b66-4521-a0a4-6ee66d834b25" name="Default Changelist" comment="BookDetailsModal ulkoasun työstöä">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web2projekti/src/Components/BookDetailsModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/Components/BookDetailsModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web2projekti/src/Components/modal.css" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/Components/modal.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web2projekti/src/ReviewPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/ReviewPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

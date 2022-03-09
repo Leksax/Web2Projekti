@@ -14,22 +14,25 @@ const BookDetailsModal = ({children, shown, close, bookItem}) => {
     console.log(bookId + " BookDetailsModal")
 
     return shown ? (
-        <div className="modal-backdrop" onClick={() => {close();}}>
-            <div className="modal-content" onClick={e => {e.stopPropagation();}}>
+        <div className="modal-backdrop " onClick={() => {close();}}>
+            <div className="modal-content modal-dialog-scrollable" onClick={e => {e.stopPropagation();}}>
                 {children}
                 <div>
-                    <div>
-                        <img src={bookItem.volumeInfo.imageLinks && bookItem.volumeInfo.imageLinks.thumbnail}/>
-                        <div className="info">
+                    <div className="bookImageContainer ">
+                        <img className="modal-img" src={bookItem.volumeInfo.imageLinks && bookItem.volumeInfo.imageLinks.thumbnail}/>
+                    </div>
+                        <div className="bookInfoContainer">
                             <h1>Book Details</h1>
-                            <h1>Title: {bookItem.volumeInfo.title}</h1>
-                            <h1>Author: {bookItem.volumeInfo.authors}</h1>
-                            <h1>Published: {bookItem.volumeInfo.publishedDate}</h1>
-                            <h1>Category: {bookItem.volumeInfo.categories}</h1>
-                            <h1>Book ID: {bookItem.id}</h1>
+                            <h2>Title: {bookItem.volumeInfo.title}</h2>
+                            <h2>Author: {bookItem.volumeInfo.authors}</h2>
+                            <h2>Published: {bookItem.volumeInfo.publishedDate}</h2>
+                            <h2>Category: {bookItem.volumeInfo.categories}</h2>
                         </div>
+                    <div className="bookReviewsContainer">
                         <ReviewPage bookId={bookId}></ReviewPage>
                     </div>
+
+
                 </div>
             </div>
         </div>
