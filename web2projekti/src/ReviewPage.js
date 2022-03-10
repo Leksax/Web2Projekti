@@ -7,9 +7,21 @@ const ReviewPage = ({bookId}) => {
     const [reviews, setReviews] = useState("")
     const [isLoaded, setIsLoaded] = useState(false);
     const [error, setError] = useState(null);
+    const [isUpdating, setIsUpdating] = useState(false);
+
+
     useEffect(() => {
         getReview()
     }, [])
+
+
+    useEffect(() => {
+        console.log("päivittyy")
+
+        getReview();
+
+    }, [isUpdating])
+
 
     const getReview = () => {
         Axios.post('http://localhost:3001/getReview', {
@@ -25,6 +37,8 @@ const ReviewPage = ({bookId}) => {
         })
     }
 
+
+
     //poiston testausta
     const deleteReview = () => {
         Axios.post('http://localhost:3001/deleteReview').then((response) => {
@@ -33,6 +47,18 @@ const ReviewPage = ({bookId}) => {
     }
 
     const submitReview = () => {
+        setIsLoaded(false)
+        const date = new Date();
+        const obj = JSON.parse('{"reviewStars":"'+ stars + '", "reviewDateCreated":"'+ date.toString() + '", "reviewBody":"'+ reviewBody + '", "review_id":"'+ (reviews.length) + '", "user_id":"1", "book_id":"'+ bookId +'"}');
+        reviews.push(obj)
+        console.log(reviews)
+
+        setReviews((prevTitles) => {
+            return [...new Set([...prevTitles, obj])];
+        });
+
+
+        setIsLoaded(true)
         console.log(bookId + " ReviewPage")
         Axios.post('http://localhost:3001/writeReview', {
             body: reviewBody,
@@ -40,7 +66,10 @@ const ReviewPage = ({bookId}) => {
             bookId: bookId
         }).then((response) => {
             console.log(response)
+            setIsUpdating(true)
         });
+
+
     }
 
     if (error) {
@@ -77,6 +106,7 @@ const ReviewPage = ({bookId}) => {
                 <br/>
 
                 <h1>Reviews</h1>
+
 
                 <ul className="list-group">
                     {reviews.map((row) => (

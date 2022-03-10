@@ -4,6 +4,7 @@
 }
 img {
     width: 50%;
+    cursor: pointer;
 }
 :root {
     --bg: #fafafa;
@@ -30,6 +31,11 @@ h1, h2 {
     max-width: 1140px;
     margin: 0 auto;
 }
+
+.card-body {
+    cursor:pointer
+}
+
 .book-grid {
     margin: 2em 0;
     display: grid;
