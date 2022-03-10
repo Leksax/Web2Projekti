@@ -1,7 +1,16 @@
-import React, {useState} from 'react'
+import React, {createRef, useState} from 'react'
 import './NavigationBar.css'
 
-const NavigationBar = () => {
+const NavigationBar = ({setSearchedValue}) => {
+    const [inputValue, setInputValue] = useState("");
+    const inputRef = createRef();
+
+    const search = () => setSearchedValue(inputValue);
+
+
+
+
+
         const [state, setState] = useState(false);
         const showDropdown = () => {
             setState(true);
@@ -12,9 +21,16 @@ const NavigationBar = () => {
         return (
             <div className="navigationBar">
                     <div className="Home">Home</div>
-                    <div className="SearchBar">
-                        <input type="text" placeholder="Search..."/>
-                    </div>
+                <div className="SearchBar">
+                    <input
+                        type="text"
+                        ref={inputRef}
+                        value={inputValue}
+                        onChange={() => setInputValue(inputRef.current.value)}
+                        placeholder="Search.."
+                    />
+                    <button  onClick={search}>Search</button>
+                </div>
                 <div className="userdropdown">
                     <div className="userdropdown-menu" onMouseEnter={showDropdown} onMouseLeave={hideDropdown}>
                         Username

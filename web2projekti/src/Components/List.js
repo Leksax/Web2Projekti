@@ -8,8 +8,9 @@ import { Button } from 'react-bootstrap';
 import axios from "axios";
 
 
-const List = () => {
-    const key = "asdasdfasfasd"
+const List = (searchedValue) => {
+
+    const key = "asdasdasd"
     const [searchValue, setSearchValue] = useState("")
     const [search, setSearch] = useState("")
     const [error, setError] = useState(null);
@@ -24,12 +25,14 @@ const List = () => {
     //we need to know if there is more data
     const [HasMore, setHasMore] = useState(true);
 
+
+
     useEffect(() => {
         setItems([])
 
         loadMoreItems();
 
-    }, [search])
+    }, [searchedValue])
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
@@ -39,10 +42,12 @@ const List = () => {
 
     function loadMoreItems() {
         setIsFetching(true);
+        console.log(searchedValue.searchedValue)
+
         axios({
             method: "GET",
             url: "https://www.googleapis.com/books/v1/volumes?",
-            params: {q: search, key: key, maxResults: 40, printType: "books", startIndex: page},
+            params: {q: searchedValue.searchedValue, key: key, maxResults: 40, printType: "books", startIndex: page},
         })
             .then((res) => {
                 setItems((prevTitles) => {
@@ -76,19 +81,7 @@ const List = () => {
             //{row.volumeInfo.imageLinks && row.volumeInfo.imageLinks.smallThumbnail}
 
             <div className="wrapper">
-                <div className="search-wrapper">
-                    <form onSubmit={handleSubmit}>
-                        <label>
-                            asd
-                            <input
-                                type="text"
-                                value={searchValue}
-                                onChange={e => setSearchValue(e.target.value)}
-                            />
-                        </label>
-                        <input type="submit" value="Submit" />
-                    </form>
-                </div>
+
                 <ul className="book-grid">
                         {Items.map((row, index) => {
                             if (Items.length === index + 1) {

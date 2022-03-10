@@ -8,7 +8,7 @@ import StarRating from "./StarRating";
 
 const LatestReviews = () => {
     const [counter, setCounter] = useState(-1);
-    const key ="asdasdafsdsa"
+    const key ="asdasdsad"
     const [theArray, setTheArray] = useState([])
     const [reviews, setReviews] = useState([])
     const [bookItem, setItem] = useState(false);
