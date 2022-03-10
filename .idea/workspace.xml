@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b00afa0-0b66-4521-a0a4-6ee66d834b25" name="Default Changelist" comment="BookDetailsModal ulkoasun työstöä">
+    <list default="true" id="7b00afa0-0b66-4521-a0a4-6ee66d834b25" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web2projekti/src/Components/NavigationBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/Components/NavigationBar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web2projekti/src/Components/NavigationBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/Components/NavigationBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web2projekti/src/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/LoginPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web2projekti/src/Components/List.css" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/Components/List.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web2projekti/src/ReviewPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/ReviewPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,7 +78,13 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1646863849259</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL−00004" summary="Login / Register paranneltu, Navbaria muokattu">
+      <created>1646939862749</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1646939862749</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,6 +118,7 @@
     <MESSAGE value="API haku lisätty List.js luokkaan" />
     <MESSAGE value="Arvosteluiden yhdistäminen API:sta haettuun kirjaan aloitettu" />
     <MESSAGE value="BookDetailsModal ulkoasun työstöä" />
-    <option name="LAST_COMMIT_MESSAGE" value="BookDetailsModal ulkoasun työstöä" />
+    <MESSAGE value="Login / Register paranneltu, Navbaria muokattu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login / Register paranneltu, Navbaria muokattu" />
   </component>
 </project>
