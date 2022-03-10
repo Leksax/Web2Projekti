@@ -2,6 +2,8 @@ import React, {useEffect, useState} from "react";
 import Axios from "axios";
 import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
 import NavigationBar from "./Components/NavigationBar";
+import './LoginPageStyles.css'
+import {FloatingLabel, Form} from "react-bootstrap";
 
 const LoginPage = ({setStatusValue, setUserid}) => {
 
@@ -14,6 +16,8 @@ const LoginPage = ({setStatusValue, setUserid}) => {
     const [password, setPassword] = useState("");
 
     const [loginStatus, setLoginStatus] = useState("");
+
+    const [statusA, setStatusA] = useState(false)
 
 
 
@@ -44,6 +48,7 @@ const LoginPage = ({setStatusValue, setUserid}) => {
                 setLoginStatus(response.data.message)
             } else {
                 setLoginStatus(response.data[0].username);
+                setStatusA(true)
             }
         });
     }
@@ -60,59 +65,82 @@ const LoginPage = ({setStatusValue, setUserid}) => {
                 setLoginStatus("Logged in as: " + response.data.user[0].username)
             }
         })
-
     }, [])
 
     return (
         <div>
-            <div className="registration">
-                <h1>Register</h1>
-                <label>Username</label>
-                <input
-                    type="text"
-                    onChange={(e) => {
-                        setUsernameReg(e.target.value);
-                    }}/>
-                <label>Password</label>
-                <input
-                    type="password"
-                    onChange={(e) => {
-                        setPasswordReg(e.target.value);
-                    }}/>
-                <label>Email</label>
-                <input
-                    type="text"
-                    onChange={(e) => {
-                        setEmailReg(e.target.value);
-                    }}/>
-                <button onClick={register}>Register</button>
+            <NavigationBar/>
+            <div className="RegistrationContainer">
+                <form className="has-validation">
+                    <h1>Register</h1>
+                    <div>
+                        <label>Username</label>
+                        <input
+                            required
+                            className="form-control-sm"
+                            type="text"
+                            onChange={(e) => {
+                                setUsernameReg(e.target.value);
+                            }}/>
+                    </div>
+                    <div>
+                        <label>Password</label>
+                        <input
+                            required
+                            className="form-control-sm"
+                            type="password"
+                            onChange={(e) => {
+                                setPasswordReg(e.target.value);
+                            }}/>
+                    </div>
+                    <div>
+                        <label>Email</label>
+                        <input
+                            required
+                            className="form-control-sm"
+                            type="text"
+                            onChange={(e) => {
+                                setEmailReg(e.target.value);
+                            }}/>
+                    </div>
+
+
+
+                    <button className="btn btn-outline-primary" onClick={register}>Register</button>
+                </form>
             </div>
 
 
-            <div className="login">
-                <h1>Login</h1>
-                <input
-                    type="text"
-                    placeholder="username"
-                    onChange={(e) => {
-                        setUsername(e.target.value);
-                    }}/>
-                <input
-                    type="password"
-                    placeholder="password"
-                    onChange={(e) => {
-                        setPassword(e.target.value);
-                    }}/>
-                <Link to="/">
-                <button onClick={login} onClick={status}>Login</button>
-                </Link>
+
+            <div className="LoginContainer">
+                <form className="has-validation">
+                    <h1>Login</h1>
+                    <div>
+                        <label>Username</label>
+                        <input
+                            required
+                            className="form-control-sm"
+                            type="text"
+                            placeholder="username"
+                            onChange={(e) => {
+                                setUsername(e.target.value);
+                            }}/>
+                    </div>
+                    <div>
+                        <label>Password</label>
+                        <input
+                            required
+                            className="form-control-sm"
+                            type="password"
+                            placeholder="password"
+                            onChange={(e) => {
+                                setPassword(e.target.value);
+                            }}/>
+                    </div>
+
+                    <button className="btn btn-outline-primary" onClick={login}>Login</button>
+                </form>
             </div>
-
-            <h1>{loginStatus}</h1>
-
-            <button onClick={logout}>Logout</button>
-
-
         </div>
     )
 }

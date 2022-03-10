@@ -33,8 +33,8 @@ app.use(session({
 const db = mysql.createConnection({
     user: "root",
     host: "localhost",
-    password: "moi123moi",
-    database: "kirjahommeli"
+    password: "password",
+    database: "BookApp"
 });
 
 //Käyttäjän rekisteröinti
@@ -79,22 +79,37 @@ app.post('/login', (req, res) => {
     db.query("SELECT * FROM Users WHERE username = ?;",
         username,
         (err, result) => {
+            if (err) {
+                console.log(err)
+                res.send({err: err})
+            }
+            if (result.length > 0) {
+                bcrypt.compare(password, result[0].password, (error, response) => {
+                    if (response) {
+                        req.session.user = result
+                        console.log(req.session.user)
+                        res.send(result)
+                    } else {
+                        res.send({message: "wrong username or password"})
+                    }
+                })
+            } else {
+                res.send({message: "User does not exist"})
+            }
+        })
+})
+
+//Hae arvostelijan käyttäjänimi
+app.post('/getUsername', (req, res) => {
+    const userID = req.body.byUser_id;
+
+    db.query("SELECT username FROM Users WHERE user_id = ?", [userID], (err, result) => {
         if (err) {
             console.log(err)
-            res.send({err: err})
         }
-        if (result.length > 0) {
-            bcrypt.compare(password, result[0].password, (error, response) => {
-                if (response) {
-                    req.session.user = result
-                    console.log(req.session.user)
-                    res.send(result)
-                } else {
-                    res.send({message: "wrong username or password"})
-                }
-            })
-        } else {
-            res.send({message: "User does not exist"})
+        if (res) {
+            console.log(res)
+            res.send(result)
         }
     })
 })
@@ -111,10 +126,11 @@ app.post('/writeReview', (req, res) => {
     const stars = req.body.stars;
     const content = req.body.body;
     const bookId = req.body.bookId;
+    const posterID = req.body.postedBy;
 
     //user id on 1 testimielessä
-    db.query("INSERT INTO Reviews(reviewStars, reviewDateCreated, reviewBody, user_id, book_id) VALUES (?,?,?,1,?)",
-        [stars, postCreated, content, bookId], (err, res) => {
+    db.query("INSERT INTO Reviews(reviewStars, reviewDateCreated, reviewBody, user_id, book_id) VALUES (?,?,?,?,?)",
+        [stars, postCreated, content, posterID, bookId], (err, res) => {
             if (err) {
                 console.log(err)
             }

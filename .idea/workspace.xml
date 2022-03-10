@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b00afa0-0b66-4521-a0a4-6ee66d834b25" name="Default Changelist" comment="Arvosteluiden yhdistäminen API:sta haettuun kirjaan aloitettu">
+    <list default="true" id="7b00afa0-0b66-4521-a0a4-6ee66d834b25" name="Default Changelist" comment="BookDetailsModal ulkoasun työstöä">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web2projekti/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web2projekti/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web2projekti/src/Components/LatestReviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/Components/LatestReviews.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web2projekti/src/Components/List.js" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/Components/List.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web2projekti/src/Components/NavigationBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/Components/NavigationBar.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web2projekti/src/Components/NavigationBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/Components/NavigationBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web2projekti/src/FrontPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/FrontPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web2projekti/src/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/LoginPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web2projekti/src/ReviewPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/ReviewPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -29,8 +33,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">

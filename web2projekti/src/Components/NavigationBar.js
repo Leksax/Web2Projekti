@@ -3,6 +3,7 @@ import './NavigationBar.css'
 import {Link} from "react-router-dom";
 
 const NavigationBar = ({setSearchedValue, statusValue}) => {
+
     const [inputValue, setInputValue] = useState("");
     const inputRef = createRef();
 
@@ -32,7 +33,11 @@ const NavigationBar = ({setSearchedValue, statusValue}) => {
         }
         return (
             <div className="navigationBar">
-                    <div className="Home">Home</div>
+                    <div className="Home">
+                        <Link to="/">
+                            <button className="btn btn-primary">Home</button>
+                        </Link>
+                    </div>
                 <div className="SearchBar">
                     <input
                         type="text"
@@ -41,20 +46,12 @@ const NavigationBar = ({setSearchedValue, statusValue}) => {
                         onChange={() => setInputValue(inputRef.current.value)}
                         placeholder="Search.."
                     />
-                    <button  onClick={search}>Search</button>
+                    <button className="btn btn-primary" onClick={search}>Search</button>
                 </div>
-                <div className="userdropdown">
-                    <div className="userdropdown-menu" onMouseEnter={showDropdown} onMouseLeave={hideDropdown}>
-                        Username
-                        {state ? (<ul className="userdropdown-list" onMouseEnter={showDropdown}>
-                                <li>User details</li>
-                                <li>Logout</li>
-                            </ul>) :
-                            null}
-                    </div>
-                </div>
-                <div>
-                    <Link to="/LoginPage">{text}</Link>
+                <div className="LoginRegister">
+                    <Link to="/LoginPage">
+                        <button className="btn btn-primary">Login / Register</button>
+                    </Link>
                 </div>
             </div>
         )

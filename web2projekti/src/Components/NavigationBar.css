@@ -1,7 +1,6 @@
 .navigationBar{
     background-color: lightgray;
-    height: 47px;
-    align-items: center;
+    height: 50px;
 }
 .SearchBar {
     float: left;
@@ -18,12 +17,6 @@
     align-items: center;
 }
 
-.SearchBar button{
-    font-size: 20px;
-    padding-left: 5px;
-    margin-right: 200px;
-    align-items: center;
-}
 .userdropdown{
     height: 0.8rem;
 }
@@ -48,7 +41,11 @@
 }
 
 .Home{
- float: left;
-    padding-top: 10px;
-    padding-left: 10px;
+    margin-left: 30px;
+    float: left;
+}
+
+.LoginRegister {
+    margin-right: 30px;
+    float: right;
 }
