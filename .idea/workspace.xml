@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b00afa0-0b66-4521-a0a4-6ee66d834b25" name="Default Changelist" comment="">
+    <list default="true" id="7b00afa0-0b66-4521-a0a4-6ee66d834b25" name="Default Changelist" comment="Arvosteluiden yhdistäminen API:sta haettuun kirjaan aloitettu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/database.txt" beforeDir="false" afterPath="$PROJECT_DIR$/server/database.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web2projekti/src/Components/BookDetailsModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/Components/BookDetailsModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web2projekti/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web2projekti/src/App.test.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/web2projekti/src/Components/LatestReviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/Components/LatestReviews.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web2projekti/src/Components/List.js" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/Components/List.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web2projekti/src/Components/modal.css" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/Components/modal.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web2projekti/src/ReviewPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/ReviewPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web2projekti/src/Components/NavigationBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/Components/NavigationBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web2projekti/src/FrontPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/FrontPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web2projekti/src/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/LoginPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +32,16 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/server/index.js" working-dir="$PROJECT_DIR$/server">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.index.js" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

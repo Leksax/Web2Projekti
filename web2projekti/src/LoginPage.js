@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from "react";
 import Axios from "axios";
+import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
+import NavigationBar from "./Components/NavigationBar";
 
-const LoginPage = () => {
+const LoginPage = ({setStatusValue}) => {
     const [usernameReg, setUsernameReg] = useState("")
     const [passwordReg, setPasswordReg] = useState("")
     const [emailReg, setEmailReg] = useState("")
@@ -10,6 +12,10 @@ const LoginPage = () => {
     const [password, setPassword] = useState("");
 
     const [loginStatus, setLoginStatus] = useState("");
+
+
+
+    const status = () => {setStatusValue(true)}
 
     //Axios.defaults.withCredentials = true;
 
@@ -91,11 +97,15 @@ const LoginPage = () => {
                     onChange={(e) => {
                         setPassword(e.target.value);
                     }}/>
-                <button onClick={login}>Login</button>
+                <Link to="/">
+                <button onClick={login} onClick={status}>Login</button>
+                </Link>
             </div>
 
             <h1>{loginStatus}</h1>
+
             <button onClick={logout}>Logout</button>
+
 
         </div>
     )
