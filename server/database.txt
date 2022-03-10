@@ -1,43 +1,34 @@
 CREATE TABLE Users
 (
   user_id INT NOT NULL AUTO_INCREMENT,
-  username varchar(40) NOT NULL,
-  password varchar(500) NOT NULL,
-  email varchar(255) NOT NULL,
-  dateCreated varchar(255) NOT NULL,
-  PRIMARY KEY (user_id)
-);
-
-CREATE TABLE Books
-(
-  book_id INT NOT NULL AUTO_INCREMENT,
-  title varchar(255) NOT NULL,
-  author varchar(40) NOT NULL,
-  publisher varchar(40),
-  cover INT,
-  category varchar(40),
-  datePublished INT,
-  PRIMARY KEY (book_id)
+  username VARCHAR(40) NOT NULL,
+  password VARCHAR(500) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  userDateCreated VARCHAR(255) NOT NULL,
+  PRIMARY KEY (user_id),
+  UNIQUE (username)
 );
 
 CREATE TABLE Reviews
 (
   review_id INT NOT NULL AUTO_INCREMENT,
-  book_id INT NOT NULL,
-  user_id INT NOT NULL,
+  book_id VARCHAR(255) NOT NULL,
+  reviewBody VARCHAR(500) NOT NULL,
   reviewStars INT NOT NULL,
-  body varchar(255) NOT NULL,
-  dateCreated varchar(255) NOT NULL,
-
+  reviewDateCreated VARCHAR(255) NOT NULL,
+  user_id INT NOT NULL,
   PRIMARY KEY (review_id),
-  FOREIGN KEY (user_id) REFERENCES Users(user_id),
-  FOREIGN KEY (book_id) REFERENCES Books(book_id)
+  FOREIGN KEY (user_id) REFERENCES Users(user_id)
 );
 
 CREATE TABLE Comments
 (
-  user_id INT NOT NULL,
+  commentDateCreated VARCHAR(255) NOT NULL,
+  commentBody VARCHAR(255) NOT NULL,
+  comment_id INT NOT NULL,
   review_id INT NOT NULL,
-  FOREIGN KEY (user_id) REFERENCES Users(user_id),
-  FOREIGN KEY (review_id) REFERENCES Reviews(review_id)
+  user_id INT NOT NULL,
+  PRIMARY KEY (comment_id),
+  FOREIGN KEY (review_id) REFERENCES Reviews(review_id),
+  FOREIGN KEY (user_id) REFERENCES Users(user_id)
 );

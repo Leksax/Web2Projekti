@@ -50,21 +50,31 @@ const ReviewPage = ({bookId}) => {
     } else {
         return (
             <div>
-                <h1>Enter review</h1>
-                <input
+                <h2 className="card-title">Enter review</h2>
+                <textarea
+                    className="form-control"
+                    rows="3"
                     type="text"
                     onChange={(e) => {
                         setReviewBody(e.target.value);
                     }}
                 />
-                <label>Stars</label>
+                <br/>
+                <label>Stars:</label>
                 <input
+                    className="form-control-sm"
+                    min="1"
+                    max="5"
                     type="number"
                     onChange={(e) => {
                         setStars(e.target.value);
                     }}
                 />
-                <button onClick={submitReview}>Submit Review</button>
+                <br/>
+                <br/>
+                <button className="btn btn-primary btn-lg" onClick={submitReview}>Submit Review</button>
+                <br/>
+                <br/>
 
                 <h1>Reviews</h1>
 
@@ -73,7 +83,7 @@ const ReviewPage = ({bookId}) => {
                         <li className="list-group-item list-group-item-action">
                             <article key={row}>
                                 <h2>User: {row.user_id}</h2>
-                                <h1 className="mb-1">{row.reviewBody}</h1>
+                                <h3 className="mb-1">{row.reviewBody}</h3>
                                 <h5>Stars: {row.reviewStars}</h5>
                                 <small className="text-muted">{row.reviewDateCreated}</small>
                             </article>

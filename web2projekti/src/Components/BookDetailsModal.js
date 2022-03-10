@@ -24,9 +24,12 @@ const BookDetailsModal = ({children, shown, close, bookItem}) => {
                         <div className="bookInfoContainer">
                             <h1>Book Details</h1>
                             <h2>Title: {bookItem.volumeInfo.title}</h2>
-                            <h2>Author: {bookItem.volumeInfo.authors}</h2>
                             <h2>Published: {bookItem.volumeInfo.publishedDate}</h2>
                             <h2>Category: {bookItem.volumeInfo.categories}</h2>
+                            {bookItem.volumeInfo.authors.length > 1 ?
+                                <h2>Authors: {bookItem.volumeInfo.authors + ""}</h2> :
+                                <h2>Author: {bookItem.volumeInfo.authors}</h2>
+                            }
                         </div>
                     <div className="bookReviewsContainer">
                         <ReviewPage bookId={bookId}></ReviewPage>

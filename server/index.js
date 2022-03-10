@@ -121,17 +121,15 @@ app.post('/writeReview', (req, res) => {
         })
 })
 
-/*
-//Hae arvostelut
-app.get('/getReview', (req, res) => {
+//Hae kaikki arvostelut
+app.get('/getReviews', (req, res) => {
+
     db.query("SELECT * FROM Reviews", (err, result) => {
-        if (err) {
-            console.log(err)
-        }
+        console.log(result)
         res.send(result)
     })
+
 })
-*/
 
 //Hae tietyn kirjan arvostelut
 app.post('/getReview', (req, res) => {

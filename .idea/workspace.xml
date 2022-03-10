@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b00afa0-0b66-4521-a0a4-6ee66d834b25" name="Default Changelist" comment="BookDetailsModal ulkoasun työstöä">
+    <list default="true" id="7b00afa0-0b66-4521-a0a4-6ee66d834b25" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/database.txt" beforeDir="false" afterPath="$PROJECT_DIR$/server/database.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web2projekti/src/Components/BookDetailsModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/Components/BookDetailsModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web2projekti/src/Components/LatestReviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/Components/LatestReviews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web2projekti/src/Components/List.js" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/Components/List.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web2projekti/src/Components/modal.css" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/Components/modal.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web2projekti/src/ReviewPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web2projekti/src/ReviewPage.js" afterDir="false" />
     </list>
@@ -40,6 +44,7 @@
       <workItem from="1646565362453" duration="2659000" />
       <workItem from="1646657077107" duration="7275000" />
       <workItem from="1646753888864" duration="3180000" />
+      <workItem from="1646903606893" duration="5625000" />
     </task>
     <task id="LOCAL−00001" summary="API haku lisätty List.js luokkaan">
       <created>1646567649606</created>
@@ -53,7 +58,13 @@
       <option name="presentableId" value="LOCAL−00002" />
       <updated>1646664324991</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL−00003" summary="BookDetailsModal ulkoasun työstöä">
+      <created>1646863849259</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1646863849259</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -86,6 +97,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="API haku lisätty List.js luokkaan" />
     <MESSAGE value="Arvosteluiden yhdistäminen API:sta haettuun kirjaan aloitettu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Arvosteluiden yhdistäminen API:sta haettuun kirjaan aloitettu" />
+    <MESSAGE value="BookDetailsModal ulkoasun työstöä" />
+    <option name="LAST_COMMIT_MESSAGE" value="BookDetailsModal ulkoasun työstöä" />
   </component>
 </project>

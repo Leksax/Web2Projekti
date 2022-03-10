@@ -66,17 +66,18 @@
 }
 
 .bookImageContainer {
-    width:auto;
+    width:50%;
     height:auto;
     padding: 5px 0px 5px 10px;
     float:left;
 }
 
 .bookInfoContainer {
-    width:auto;
+    width:50%;
     height:auto;
     padding: 5px 10px 5px 0px;
     float:right;
+    text-align: left;
 }
 
 .bookReviewsContainer {
@@ -85,4 +86,5 @@
     height:auto;
     position:static;
     padding: 0px 10px 5px 10px;
+    text-align: left;
 }
