@@ -8,7 +8,7 @@ import StarRating from "./StarRating";
 
 const LatestReviews = () => {
     const [counter, setCounter] = useState(-1);
-    const key ="asdasdsad"
+    const key ="asdasd"
     const [theArray, setTheArray] = useState([])
     const [reviews, setReviews] = useState([])
     const [bookItem, setItem] = useState(false);
@@ -73,7 +73,7 @@ const LatestReviews = () => {
                 <a className="prev" onClick={(e) => scroll(null, -1)}>&#10094;</a>
                 <div className="image-container">
                     {[...theArray].reverse().map((row) => (
-                        <Card className="image" onClick={() => {toggleModal(!modalShown);setItem(row)}} style={{ width: '18rem' }}>
+                        <Card  className="image" onClick={() => {toggleModal(!modalShown);setItem(row)}} style={{ width: '18rem' }}>
                             <Card.Img  variant="top" src={row.volumeInfo.imageLinks && row.volumeInfo.imageLinks.smallThumbnail} />
                             <Card.Body >
                                 <Card.Title>{row.volumeInfo.title}</Card.Title>

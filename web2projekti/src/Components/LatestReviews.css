@@ -6,6 +6,11 @@
     justify-content: space-around;
 }
 
+h5  {
+    white-space: initial;
+}
+
+
 .image {
     height: 100px;
     width: 100px;
@@ -15,6 +20,10 @@
     display: inline-block;
     line-height: 100px;
 
+}
+
+.card-title {
+    white-space: initial;
 }
 
 .image-container {

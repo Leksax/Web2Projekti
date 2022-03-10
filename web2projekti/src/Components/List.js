@@ -6,11 +6,12 @@ import StarRating from "./StarRating";
 import { Card } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import axios from "axios";
+import eikuvaa from './eikuvaa.png';
 
 
 const List = (searchedValue) => {
 
-    const key = "asdasdasd"
+    const key = "asdasd"
     const [searchValue, setSearchValue] = useState("")
     const [search, setSearch] = useState("")
     const [error, setError] = useState(null);
@@ -38,6 +39,15 @@ const List = (searchedValue) => {
         evt.preventDefault();
         setSearch(searchValue)
     }
+
+    const setPhoto = (row) => {
+        if(row.volumeInfo.imageLinks && row.volumeInfo.imageLinks.smallThumbnail)   {
+            return (row.volumeInfo.imageLinks && row.volumeInfo.imageLinks.smallThumbnail)
+        } else {
+            return eikuvaa
+        }
+    }
+
 
 
     function loadMoreItems() {
@@ -89,7 +99,7 @@ const List = (searchedValue) => {
                                     <div key={index}>
                                         <li>
                                             <Card onClick={() => {toggleModal(!modalShown);setItem(row)}} style={{ width: '18rem' }}>
-                                                <Card.Img variant="top" src={row.volumeInfo.imageLinks && row.volumeInfo.imageLinks.smallThumbnail} />
+                                                <Card.Img variant="top" src={setPhoto(row)}/>
                                                 <Card.Body >
                                                     <Card.Title>{row.volumeInfo.title}</Card.Title>
                                                     <StarRating bookId={row.id}  />;
@@ -101,7 +111,7 @@ const List = (searchedValue) => {
                             } else {
                                 return <li>
                                     <Card onClick={() => {toggleModal(!modalShown);setItem(row)}} style={{ width: '18rem' }}>
-                                        <Card.Img variant="top" src={row.volumeInfo.imageLinks && row.volumeInfo.imageLinks.smallThumbnail} />
+                                        <Card.Img variant="top" src={setPhoto(row)} />
                                         <Card.Body >
                                             <Card.Title>{row.volumeInfo.title}</Card.Title>
                                             <StarRating bookId={row.id}  />;
@@ -111,7 +121,7 @@ const List = (searchedValue) => {
                             }
                         })}
                 </ul>
-                        {isFetching && <p>Fetching items...</p>}
+                        {isFetching && <p></p>}
                         {!isFetching && HasMore && (
                             <button onClick={loadMoreItems}>Load more</button>
                         )}
