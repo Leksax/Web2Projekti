@@ -3,7 +3,7 @@ import './LatestReviews.css'
 import $ from 'jquery';
 import Axios from "axios";
 import BookDetailsModal from "./BookDetailsModal";
-import {Card} from "react-bootstrap";
+import { Card } from 'react-bootstrap';
 import StarRating from "./StarRating";
 
 const LatestReviews = () => {
