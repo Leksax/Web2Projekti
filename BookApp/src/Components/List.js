@@ -9,9 +9,8 @@ import eikuvaa from './images/eikuvaa.png';
 
 const List = (searchedValue) => {
 
-    const key = "asdasd"
-    const [searchValue, setSearchValue] = useState("")
-    const [search, setSearch] = useState("")
+    const key = "API-AVAIN"
+
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [Items, setItems] = useState([]);
@@ -19,11 +18,8 @@ const List = (searchedValue) => {
     const [modalShown, toggleModal] = useState(false);
 
     const [isFetching, setIsFetching] = useState(false);
-    //setting tha initial page
     const [page, setPage] = useState(0);
-    //we need to know if there is more data
     const [HasMore, setHasMore] = useState(true);
-
 
 
     useEffect(() => {
@@ -32,11 +28,6 @@ const List = (searchedValue) => {
         loadMoreItems();
 
     }, [searchedValue])
-
-    const handleSubmit = (evt) => {
-        evt.preventDefault();
-        setSearch(searchValue)
-    }
 
     const setPhoto = (row) => {
         if(row.volumeInfo.imageLinks && row.volumeInfo.imageLinks.smallThumbnail)   {
@@ -50,7 +41,6 @@ const List = (searchedValue) => {
 
     function loadMoreItems() {
         setIsFetching(true);
-        console.log(searchedValue.searchedValue)
 
         axios({
             method: "GET",
@@ -82,12 +72,6 @@ const List = (searchedValue) => {
         return <>Lataa</>;
     } else {
         return (
-
-
-
-
-            //{row.volumeInfo.imageLinks && row.volumeInfo.imageLinks.smallThumbnail}
-
             <div className="wrapper">
 
                 <ul className="book-grid">

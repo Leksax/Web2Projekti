@@ -7,8 +7,10 @@ import { Card } from 'react-bootstrap';
 import StarRating from "./StarRating";
 
 const LatestReviews = () => {
+
+    const key ="API-AVAIN"
+
     const [counter, setCounter] = useState(-1);
-    const key ="asdasd"
     const [theArray, setTheArray] = useState([])
     const [reviews, setReviews] = useState([])
     const [bookItem, setItem] = useState(false);
@@ -62,7 +64,6 @@ const LatestReviews = () => {
 
 
     const scroll = (event, direction) => {
-        console.log("test1")
         let far = $( '.image-container' ).width()/2*direction;
         let pos = $('.image-container').scrollLeft() + far;
         $('.image-container').animate( { scrollLeft: pos }, 1000)

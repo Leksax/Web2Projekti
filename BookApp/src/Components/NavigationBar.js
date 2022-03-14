@@ -9,28 +9,15 @@ const NavigationBar = ({setSearchedValue, statusValue}) => {
 
     const search = () => setSearchedValue(inputValue);
 
-    const [text, setText] = useState("");
-    const nappulaTeksti = () => {
-        if (statusValue){
-            setText("Log out")
-        }
-        else if (!statusValue){
-            setText("Log in")
-        }
-    };
-    useEffect(() => {
-        nappulaTeksti()
-
-    }, [])
-
-
         const [state, setState] = useState(false);
+
         const showDropdown = () => {
             setState(true);
         }
         const hideDropdown = () => {
             setState(false);
         }
+
         return (
             <div className="navigationBar">
                     <div className="Home">

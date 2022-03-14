@@ -33,8 +33,8 @@ app.use(session({
 const db = mysql.createConnection({
     user: "root",
     host: "localhost",
-    password: "password",
-    database: "BookApp"
+    password: "MYSQLSALASANA",
+    database: "TIETOKANNANNIMI"
 });
 
 //Käyttäjän rekisteröinti

@@ -11,7 +11,6 @@ const BookDetailsModal = ({children, shown, close, bookItem}) => {
     }
 
     const bookId = bookItem.id
-    console.log(bookId + " BookDetailsModal")
 
     return shown ? (
         <div className="modal-backdrop " onClick={() => {close();}}>

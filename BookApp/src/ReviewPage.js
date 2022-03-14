@@ -48,7 +48,9 @@ const ReviewPage = ({bookId}) => {
         })
     }
 
-    const submitReview = () => {
+    const submitReview = (e) => {
+
+        e.preventDefault()
         setIsLoaded(false)
         const date = new Date();
         const obj = JSON.parse('{"reviewStars":"'+ stars + '", "reviewDateCreated":"'+ date.toString() + '", "reviewBody":"'+ reviewBody + '", "review_id":"'+ (reviews.length) + '", "user_id":"1", "book_id":"'+ bookId +'"}');

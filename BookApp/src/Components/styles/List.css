@@ -1,0 +1,44 @@
+*, *:after, *:before {
+    margin: 0;
+    padding: 0;
+}
+img {
+    width: 50%;
+    cursor: pointer;
+}
+:root {
+    --bg: #fafafa;
+    --bg-offset: #fff;
+    --text: #111517;
+    --gray: #858585;
+    --border: rgba(0, 0, 0, 0.1);
+}
+ul, ol {
+    list-style: none;
+}
+body {
+    background: var(--bg);
+    font-family: sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 14px;
+}
+h1, h2 {
+
+}
+.wrapper {
+    width: 96%;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.card-body {
+    cursor:pointer
+}
+
+.book-grid {
+    margin: 2em 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 48px;
+}

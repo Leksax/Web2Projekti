@@ -4,10 +4,7 @@ import Axios from "axios";
 function StarRating({ bookId }) {
 
 
-
-
     const [rating, setRating] = useState(0);
-    const [reviews, setReviews] = useState("")
     const [isLoaded, setIsLoaded] = useState(false);
     const [error, setError] = useState(null);
 
@@ -30,14 +27,12 @@ function StarRating({ bookId }) {
     }
 
     function ArrayAvg(reviews) {
-        var i = 0, summ = 0, ArrayLen = reviews.length;
+        var i = 0, sum = 0, ArrayLen = reviews.length;
         while (i < ArrayLen) {
-            summ = summ + reviews[i++].reviewStars;
+            sum = sum + reviews[i++].reviewStars;
         }
-        return summ / ArrayLen;
+        return sum / ArrayLen;
     }
-
-
 
 
     if (error) {
