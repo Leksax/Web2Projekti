@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import './LatestReviews.css'
+import './styles/LatestReviews.css'
 import $ from 'jquery';
 import Axios from "axios";
 import BookDetailsModal from "./BookDetailsModal";

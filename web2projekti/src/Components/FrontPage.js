@@ -1,7 +1,7 @@
-import NavigationBar from "./Components/NavigationBar";
+import NavigationBar from "./NavigationBar";
 import React from "react";
-import LatestReviews from "./Components/LatestReviews";
-import List from "./Components/List";
+import LatestReviews from "./LatestReviews";
+import List from "./List";
 
 function FrontPage(){
     const [searchedValue, setSearchedValue] = React.useState();

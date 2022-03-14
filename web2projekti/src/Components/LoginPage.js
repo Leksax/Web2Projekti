@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
 import Axios from "axios";
 import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
-import NavigationBar from "./Components/NavigationBar";
-import './LoginPageStyles.css'
+import NavigationBar from "./NavigationBar";
+import './styles/LoginPageStyles.css'
 import {FloatingLabel, Form} from "react-bootstrap";
 
 const LoginPage = ({setStatusValue, setUserid}) => {

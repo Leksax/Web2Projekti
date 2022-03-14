@@ -1,6 +1,6 @@
 import React from 'react';
 import ReviewPage from "../ReviewPage";
-import './modal.css'
+import './styles/modal.css'
 
 const BookDetailsModal = ({children, shown, close, bookItem}) => {
 

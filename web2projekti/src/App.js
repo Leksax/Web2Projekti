@@ -1,8 +1,8 @@
 import React from "react";
-import './App.css';
-import LoginPage from "./LoginPage";
+import './Components/styles/App.css';
+import LoginPage from "./Components/LoginPage";
 import ReviewPage from "./ReviewPage";
-import FrontPage from "./FrontPage";
+import FrontPage from "./Components/FrontPage";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import NavigationBar from "./Components/NavigationBar";
 import LatestReviews from "./Components/LatestReviews";

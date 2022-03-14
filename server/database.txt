@@ -20,15 +20,3 @@ CREATE TABLE Reviews
   PRIMARY KEY (review_id),
   FOREIGN KEY (user_id) REFERENCES Users(user_id)
 );
-
-CREATE TABLE Comments
-(
-  commentDateCreated VARCHAR(255) NOT NULL,
-  commentBody VARCHAR(255) NOT NULL,
-  comment_id INT NOT NULL,
-  review_id INT NOT NULL,
-  user_id INT NOT NULL,
-  PRIMARY KEY (comment_id),
-  FOREIGN KEY (review_id) REFERENCES Reviews(review_id),
-  FOREIGN KEY (user_id) REFERENCES Users(user_id)
-);

@@ -1,12 +1,10 @@
 import {useEffect, useState} from "react";
-import Axios from "axios";
-import './List.css'
+import './styles/List.css'
 import BookDetailsModal from "./BookDetailsModal";
 import StarRating from "./StarRating";
 import { Card } from 'react-bootstrap';
-import { Button } from 'react-bootstrap';
 import axios from "axios";
-import eikuvaa from './eikuvaa.png';
+import eikuvaa from './images/eikuvaa.png';
 
 
 const List = (searchedValue) => {

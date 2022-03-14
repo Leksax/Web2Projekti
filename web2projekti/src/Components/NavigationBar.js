@@ -1,5 +1,5 @@
 import React, {createRef, useEffect, useState} from 'react'
-import './NavigationBar.css'
+import './styles/NavigationBar.css'
 import {Link} from "react-router-dom";
 
 const NavigationBar = ({setSearchedValue, statusValue}) => {
