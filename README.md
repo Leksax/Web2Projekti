@@ -1,4 +1,4 @@
-# Kirjanarvostelusivusto BookApp
+# Kirja-arvostelusivusto BookApp
 
 ## Tekijät: Juuso Lahtinen, Olli Kolkki, Leo Lehtiö
 
