@@ -37,7 +37,7 @@ Näiden jälkeen sivusto toimii osoitteessa: [http://localhost:3000](http://loca
 
 # REST API kuvaus
 
-```json
+```
 käyttäjän rekisteröinti
 {
 method: 'post'
