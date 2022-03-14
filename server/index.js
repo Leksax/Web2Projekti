@@ -128,7 +128,6 @@ app.post('/writeReview', (req, res) => {
     const bookId = req.body.bookId;
     const posterID = req.body.postedBy;
 
-    //user id on 1 testimielessä
     db.query("INSERT INTO Reviews(reviewStars, reviewDateCreated, reviewBody, user_id, book_id) VALUES (?,?,?,?,?)",
         [stars, postCreated, content, posterID, bookId], (err, res) => {
             if (err) {
@@ -158,7 +157,7 @@ app.post('/getReview', (req, res) => {
 
 })
 
-//Poista arvostelu (id haku ei vielä tehty)
+//Poista arvostelu (jäänyt kesken)
 app.post("/deleteReview", (req, res) => {
     const id = 9;
 
